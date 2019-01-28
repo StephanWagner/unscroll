@@ -1,9 +1,9 @@
-var debounce = require('.')
+var unscroll = require('./unscroll')
 var sinon = require('sinon')
 
 describe('housekeeping', function() {
   it('should be defined as a function', function() {
-    expect(typeof debounce).toEqual('function')
+    expect(typeof unscroll).toEqual('function')
   })
 })
 
