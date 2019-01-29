@@ -1,20 +1,26 @@
 {
   "name": "unscroll",
-  "description": "",
   "version": "1.0.0",
-  "repository": "git://github.com/component/debounce",
-  "main": "unscroll.js",
-  "scripts": {
-    "test": "minijasminenode unscroll.test.js"
-  },
-  "license": "MIT",
+  "description": "",
   "keywords": [
+    "scroll",
     "scrollbar"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/StephanWagner/unscroll.git"
+  },
+  "bugs": {
+    "url": "https://github.com/StephanWagner/jBox/unscroll",
+    "email": "stephanwagner.me@gmail.com"
+  },
+  "author": "Stephan Wagner <stephanwagner.me@gmail.com> (https://stephanwagner.me)",
+  "license": "MIT",
+  "main": "unscroll.js",
   "devDependencies": {
-    "minijasminenode": "^1.1.1",
-    "sinon": "^1.17.7",
-    "mocha": "*",
-    "should": "*"
+    "minijasminenode": "^1.1.1"
+  },
+  "scripts": {
+    "test": "minijasminenode unscroll.test.js"
   }
 }
