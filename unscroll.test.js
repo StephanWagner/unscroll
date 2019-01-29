@@ -1,5 +1,4 @@
-var unscroll = require('./unscroll')
-var sinon = require('sinon')
+var unscroll = require('./unscroll');
 
 describe('housekeeping', function() {
   it('should be defined as a function', function() {
