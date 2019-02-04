@@ -1,6 +1,10 @@
 body {
   font-family: sans-serif;
-  padding: 100px;
+  padding: 140px 20px 20px;
+}
+
+.demo-content {
+  line-height: 40px;
 }
 
 p {
@@ -12,40 +16,31 @@ p {
   box-sizing: border-box;
 }
 
-.h {
+.h1 {
   background: #ffeeee;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  height: 20px;
+  height: 40px;
   text-align: right;
 }
 
 .h2 {
   background: #eeffee;
   position: fixed;
-  top: 20px;
-  left: 0;
-  right: 80px;
-  height: 20px;
-  text-align: right;
-}
-
-.h2A {
-  background: #eeffff;
-  position: fixed;
   top: 40px;
   left: 0;
-  right: 80%;
-  height: 20px;
+  right: 80px;
+  height: 40px;
   text-align: right;
 }
 
 .h3 {
   background: #eeeeff;
   position: absolute;
-  top: 60px;
+  top: 80px;
+  height: 40px;
   left: 0;
   width: 100%;
   text-align: right;
