@@ -42,8 +42,6 @@
       document.body.removeChild(scrollElement);
 
       this.set('scrollbarWidth', scrollbarWidth);
-      this.set('pageHasScrollbar', scrollbarWidth > 0);
-
       return scrollbarWidth + 'px';
     }
 
@@ -59,12 +57,6 @@
       style.setAttribute('id', 'unscroll-class-name');
       style.appendChild(document.createTextNode(css));
       head.appendChild(style);
-    }
-
-    // Check if the page has a scrollbar
-    this.pageHasScrollbar = function () {
-      this.getScrollbarWidth();
-      return this.get('pageHasScrollbar') === true && document.body.scrollHeight > document.body.clientHeight;
     }
 
     // Get the elements to adjust, force body element
@@ -95,33 +87,33 @@
       return elements;
     }
 
-    // Abort if page is not scrollable
-    if (!this.pageHasScrollbar()) {
-      return;
-    }
+    // Init scrollbar width
+    this.getScrollbarWidth();
 
     // Clean up elements
-    elements = this.getElementsToAdjust(elements);
+    if (this.get('scrollbarWidth')) {
+      elements = this.getElementsToAdjust(elements);
 
-    // Loop through elements and adjust accordingly
-    for (var i = 0; i < elements.length; i++) {
-      const elementsDOM = document.querySelectorAll(elements[i][0]);
-      for (var j = 0; j < elementsDOM.length; j++) {
-        if (elementsDOM[j].getAttribute('data-unscroll')) {
-          return;
+      // Loop through elements and adjust accordingly
+      for (var i = 0; i < elements.length; i++) {
+        const elementsDOM = document.querySelectorAll(elements[i][0]);
+        for (var j = 0; j < elementsDOM.length; j++) {
+          if (elementsDOM[j].getAttribute('data-unscroll')) {
+            return;
+          }
+          var attribute = elements[i][1];
+          const computedStyles = window.getComputedStyle(elementsDOM[j]);
+          const computedStyle = computedStyles.getPropertyValue(attribute);
+          elementsDOM[j].setAttribute('data-unscroll', attribute);
+          if (!computedStyle) {
+            computedStyle = '0px';
+          }
+          const operator = attribute == 'padding-right' || attribute == 'right' ? '+' : '-';
+          elementsDOM[j].style[attribute] = 'calc(' + computedStyle + ' ' + operator + ' ' + this.getScrollbarWidth() + ')';
         }
-        var attribute = elements[i][1];
-        const computedStyles = window.getComputedStyle(elementsDOM[j]);
-        const computedStyle = computedStyles.getPropertyValue(attribute);
-        elementsDOM[j].setAttribute('data-unscroll', attribute);
-        if (!computedStyle) {
-          computedStyle = '0px';
-        }
-        const operator = attribute == 'padding-right' || attribute == 'right' ? '+' : '-';
-        elementsDOM[j].style[attribute] = 'calc(' + computedStyle + ' ' + operator + ' ' + this.getScrollbarWidth() + ')';
       }
     }
-    
+
     // Make the page unscrollable
     addUnscrollClassName();
     document.body.classList.add('unscrollable');
