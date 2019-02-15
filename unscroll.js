@@ -87,11 +87,12 @@
       return elements;
     }
 
-    // Init scrollbar width
-    this.getScrollbarWidth();
+    this.pageHasScrollbar = function () {
+      return this.getScrollbarWidth() && document.body.offsetHeight > window.innerHeight;
+    }
 
     // Clean up elements
-    if (this.get('scrollbarWidth')) {
+    if (this.pageHasScrollbar()) {
       elements = this.getElementsToAdjust(elements);
 
       // Loop through elements and adjust accordingly
