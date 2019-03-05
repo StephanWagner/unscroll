@@ -61,6 +61,8 @@
 
     // Get the elements to adjust, force body element
     this.getElementsToAdjust = function (elements) {
+      !elements && (elements = []);
+      
       if (typeof elements === 'string') {
         elements = [
           [elements, 'padding-right']
