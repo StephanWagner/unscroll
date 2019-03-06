@@ -75,7 +75,7 @@
         }
       });
 
-      let bodyFound = false;
+      var bodyFound = false;
       for (var i = 0; i < elements.length; i++) {
         if (elements[i][0].indexOf('body') !== -1) {
           bodyFound = true;
