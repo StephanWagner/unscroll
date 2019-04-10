@@ -1,16 +1,47 @@
 <!doctype html>
 
-<button onclick="unscroll(['.h1', ['.h2', 'right'], '.h3'])">Disable Scrolling</button>
-<button onclick="unscroll.reset()">Enable Scrolling</button>
-
-<div class="h1">H1</div>
-<div class="h2">H2</div>
-<div class="h3">H3</div>
-
-<div class="demo-content">
-    <p>1</p><p>2</p><p>3</p><p>4</p><p>5</p><p>6</p><p>7</p><p>8</p><p>9</p><p>10</p>
-    <p>11</p><p>12</p><p>13</p><p>14</p><p>15</p><p>16</p><p>17</p><p>18</p><p>19</p><p>20</p>
+<div class="el el-absolute1">
+    <div class="el-text">Absolute positioned element</div>
+    <div class="el-indicator"></div>
 </div>
+<div class="el el-absolute2">
+    <div class="el-text">Absolute positioned element</div>
+    <div class="el-indicator"></div>
+</div>
+
+<div class="el el-full-width">
+    <div class="el-text">Full width Element</div>
+    <div class="el-indicator"></div>
+</div>
+
+<div class="el el-centered">
+    <div class="el-text">Full width Element</div>
+    <div class="el-indicator"></div>
+</div>
+
+<div class="buttons-container buttons-native">
+    <div class="buttons-headline">Without unscroll</div>
+    <div class="buttons-description">Notice how the black squares "jump" to the right.</div>
+    <button onclick="unscroll.reset(); unscrollNative()">Disable scrolling</button>
+    <button onclick="rescrollNative()">Enable scrolling</button>
+</div>
+
+<div class="buttons-container buttons-unscroll">
+    <div class="buttons-headline">With unscroll</div>
+    <div class="buttons-description">Notice how the black squares won't "jump".</div>
+    <button onclick="rescrollNative(); unscroll(['.el-absolute1', ['.el-absolute2', 'right']])">Disable scrolling</button>
+    <button onclick="unscroll.reset()">Enable scrolling</button>
+</div>
+
+<div class="spacer"></div>
 
 <link rel="stylesheet" href="demo.css"></style>
 <script src="unscroll.js"></script>
+<script>
+function unscrollNative() {
+    document.body.classList.add('native-remove-scrolling');
+}
+function rescrollNative() {
+    document.body.classList.remove('native-remove-scrolling');
+}
+</script>

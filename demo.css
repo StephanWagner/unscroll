@@ -1,47 +1,88 @@
 body {
-  font-family: sans-serif;
-  padding: 140px 20px 20px;
-}
-
-.demo-content {
-  line-height: 40px;
-}
-
-p {
-  background: #fafafa;
-  text-align: right;
+  font-family: Arial, sans-serif;
+  padding: 120px 20px 20px;
+  margin: 0;
+  font-size: 16px;
 }
 
 * {
   box-sizing: border-box;
 }
 
-.h1 {
-  background: #ffeeee;
-  position: fixed;
+.el {
+  display: flex;
+  background: #ddd;
+  height: 50px;
+  line-height: 50px;
+  font-weight: bold;
+  padding: 0 20px;
+}
+
+.el-absolute1 {
+  position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  height: 40px;
-  text-align: right;
 }
 
-.h2 {
-  background: #eeffee;
-  position: fixed;
-  top: 40px;
-  left: 0;
-  right: 80px;
-  height: 40px;
-  text-align: right;
-}
-
-.h3 {
-  background: #eeeeff;
+.el-absolute2 {
   position: absolute;
-  top: 80px;
-  height: 40px;
+  top: 70px;
+  right: 100px;
   left: 0;
-  width: 100%;
-  text-align: right;
+}
+
+.el-full-width {
+  position: relative;
+  margin: 20px 0 0;
+}
+
+.el-centered {
+  width: 80%;
+  margin: 20px auto 0;
+}
+
+.el-text {
+  flex: 1;
+}
+
+.el-indicator {
+  flex-shrink: 0;
+  align-self: center;
+  width: 30px;
+  height: 30px;
+  background: #000;
+  margin-right: -10px;
+}
+
+.buttons-container {
+  text-align: center;
+  margin: 40px 0 0;
+}
+
+.buttons-headline {
+  font-size: 22px;
+  margin: 0 0 10px;
+}
+
+.buttons-description {
+  margin: 0 0 15px;
+  color: #999;
+  font-size: 14px;
+}
+
+.buttons-native .buttons-headline {
+  color: #d33;
+}
+
+.buttons-unscroll .buttons-headline {
+  color: #390;
+}
+
+.spacer {
+  height: 6000px;
+}
+
+.native-remove-scrolling {
+  overflow: hidden;
 }
