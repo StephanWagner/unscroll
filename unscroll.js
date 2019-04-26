@@ -124,7 +124,7 @@
 
   // Reset elements and make page scrollable again
   unscroll.reset = function () {
-    elements = document.querySelectorAll('[data-unscroll]');
+    var elements = document.querySelectorAll('[data-unscroll]');
 
     for (var i = 0; i < elements.length; i++) {
       var attribute = elements[i].getAttribute('data-unscroll');
