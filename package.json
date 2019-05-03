@@ -1,6 +1,6 @@
 {
   "name": "unscroll",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Make your page unscrollable and adjusts content elements to compensate for the missing scrollbar.",
   "keywords": [
     "scroll",
