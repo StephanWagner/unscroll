@@ -50,9 +50,9 @@
       if (document.getElementById('unscroll-class-name')) {
         return;
       }
-      var css = '.unscrollable { overflow-y: hidden !important; }',
-        head = document.head || document.getElementsByTagName('head')[0],
-        style = document.createElement('style');
+      var css = '.unscrollable { overflow: hidden !important; }';
+      var head = document.head || document.getElementsByTagName('head')[0];
+      var style = document.createElement('style');
       style.type = 'text/css';
       style.setAttribute('id', 'unscroll-class-name');
       style.appendChild(document.createTextNode(css));
@@ -62,7 +62,7 @@
     // Get the elements to adjust, force body element
     this.getElementsToAdjust = function (elements) {
       !elements && (elements = []);
-      
+
       if (typeof elements === 'string') {
         elements = [
           [elements, 'padding-right']
