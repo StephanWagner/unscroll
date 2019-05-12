@@ -18,9 +18,11 @@
   "license": "MIT",
   "main": "unscroll.js",
   "devDependencies": {
-    "minijasminenode": "^1.1.1"
+    "minijasminenode": "^1.1.1",
+    "uglify-js": "^3.5.11"
   },
   "scripts": {
-    "test": "minijasminenode unscroll.test.js"
+    "test": "minijasminenode unscroll.test.js",
+    "uglify": "uglifyjs ./unscroll.js -o ./unscroll.min.js"
   }
 }
