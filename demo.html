@@ -1,47 +1,50 @@
-<!doctype html>
+<!DOCTYPE html>
 
 <div class="el el-absolute1">
-    <div class="el-text">Absolute positioned element</div>
-    <div class="el-indicator"></div>
+  <div class="el-text">Absolute positioned element</div>
+  <div class="el-indicator"></div>
 </div>
+
 <div class="el el-absolute2">
-    <div class="el-text">Absolute positioned element</div>
-    <div class="el-indicator"></div>
+  <div class="el-text">Absolute positioned element</div>
+  <div class="el-indicator"></div>
 </div>
 
 <div class="el el-full-width">
-    <div class="el-text">Full width Element</div>
-    <div class="el-indicator"></div>
+  <div class="el-text">Full width Element</div>
+  <div class="el-indicator"></div>
 </div>
 
 <div class="el el-centered">
-    <div class="el-text">Full width Element</div>
-    <div class="el-indicator"></div>
+  <div class="el-text">Full width Element</div>
+  <div class="el-indicator"></div>
 </div>
 
 <div class="buttons-container buttons-native">
-    <div class="buttons-headline">Without unscroll</div>
-    <div class="buttons-description">Notice how the black squares "jump" to the right.</div>
-    <button onclick="unscroll.reset(); unscrollNative()">Disable scrolling</button>
-    <button onclick="rescrollNative()">Enable scrolling</button>
+  <div class="buttons-headline">Without unscroll</div>
+  <div class="buttons-description">Notice how the black squares "jump" to the right.</div>
+  <button onclick="unscroll.reset(); unscrollNative()">Disable scrolling</button>
+  <button onclick="rescrollNative()">Enable scrolling</button>
 </div>
 
 <div class="buttons-container buttons-unscroll">
-    <div class="buttons-headline">With unscroll</div>
-    <div class="buttons-description">Notice how the black squares won't "jump".</div>
-    <button onclick="rescrollNative(); unscroll(['.el-absolute1', ['.el-absolute2', 'right']])">Disable scrolling</button>
-    <button onclick="unscroll.reset()">Enable scrolling</button>
+  <div class="buttons-headline">With unscroll</div>
+  <div class="buttons-description">Notice how the black squares won't "jump".</div>
+  <button onclick="rescrollNative(); unscroll(['.el-absolute1', ['.el-absolute2', 'right']])">Disable scrolling</button>
+  <button onclick="unscroll.reset()">Enable scrolling</button>
 </div>
 
 <div class="spacer"></div>
 
-<link rel="stylesheet" href="demo.css"></style>
+<link rel="stylesheet" href="demo.css">
 <script src="unscroll.js"></script>
+
 <script>
-function unscrollNative() {
+  function unscrollNative() {
     document.body.classList.add('native-remove-scrolling');
-}
-function rescrollNative() {
+  }
+
+  function rescrollNative() {
     document.body.classList.remove('native-remove-scrolling');
-}
+  }
 </script>
